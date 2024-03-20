@@ -8,7 +8,7 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 --remap nohlsearch to <leader>/
 vim.api.nvim_set_keymap("n", "<leader>/", ":nohlsearch<CR>", { noremap = true, silent = true })
- --remap live grep to <leader>g
+ --remap live grep to <leader>lg
 vim.api.nvim_set_keymap("n", "<leader>lg", ":Telescope live_grep<CR>", { noremap = true, silent = true })
 --remap find files to <leader>pf
 vim.api.nvim_set_keymap("n", "<leader>ff", ":Telescope find_files<CR>", { noremap = true, silent = true })
@@ -16,7 +16,7 @@ vim.api.nvim_set_keymap("n", "<leader>ff", ":Telescope find_files<CR>", { norema
 vim.api.nvim_set_keymap("n", "<leader>gf", ":Telescope git_files<CR>", { noremap = true, silent = true })
 --remap undotree toggle to <leader>u
 vim.api.nvim_set_keymap("n", "<leader>u", ":UndotreeToggle<CR>", { noremap = true, silent = true })
--- remap cellular-automaton make it rain to <leacer>fml
+-- remap cellular-automaton make it rain to <leader>fml
 vim.api.nvim_set_keymap("n", "<leader>fml", ":CellularAutomaton make_it_rain<CR>", { noremap = true, silent = true })
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
