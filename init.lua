@@ -3,9 +3,11 @@
  vim.cmd("set expandtab") -- use spaces instead of tabs
  vim.cmd("set softtabstop=4")
  vim.cmd("set relativenumber") -- set relative line numbers
+ vim.cmd("set termguicolors") -- enable 24-bit RGB colors
 -- remap leader key top space
  vim.g.mapleader = " "
  vim.g.maplocalleader = "/"
+ vim.g.copilot_workspace_folders = {"~/.config/nvim/", "~/ScriptingPlayground/"}
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
