@@ -1,12 +1,23 @@
+-------Base Functionality Remaps-------
+
+--remap leader kep to space
+vim.g.mapleader = " "
+--remap local leader key to /
+vim.g.maplocalleader = "/"
+
+--remap save to <leader>w
+vim.api.nvim_set_keymap("n", "<leader>w", ":w<CR>", { noremap = true, silent = true })
+--remap quit to <leader>q
+vim.api.nvim_set_keymap("n", "<leader>q", ":q<CR>", { noremap = true, silent = true })
+--remap save and quit to <leader>wq
+vim.api.nvim_set_keymap("n", "<leader>wq", ":wq<CR>", { noremap = true, silent = true })
 --remap nohlsearch to <leader>/
 vim.api.nvim_set_keymap("n", "<leader>/", ":nohlsearch<CR>", { noremap = true, silent = true })
---remap live grep to <leader>lg
-vim.api.nvim_set_keymap("n", "<leader>lg", ":Telescope live_grep<CR>", { noremap = true, silent = true })
---remap find files to <leader>ff
-vim.api.nvim_set_keymap("n", "<leader>ff", ":Telescope find_files<CR>", { noremap = true, silent = true })
---remap find files in git to <leader>gf
-vim.api.nvim_set_keymap("n", "<leader>gf", ":Telescope git_files<CR>", { noremap = true, silent = true })
---remap undotree toggle to <leader>u
-vim.api.nvim_set_keymap("n", "<leader>u", ":UndotreeToggle<CR>", { noremap = true, silent = true })
--- remap cellular-automaton make it rain to <leader>fml
-vim.api.nvim_set_keymap("n", "<leader>fml", ":CellularAutomaton make_it_rain<CR>", { noremap = true, silent = true })
+--remap bprev to <leader>b
+vim.api.nvim_set_keymap("n", "<leader>b", ":bprev<CR>", { noremap = true, silent = true })
+--remap bnext to <leader>f
+vim.api.nvim_set_keymap("n", "<leader>f", ":bnext<CR>", { noremap = true, silent = true })
+
+-------Plugin Remaps-------
+-- remap leader key top space
+vim.g.copilot_workspace_folders = { "~/.config/nvim/", "~/ScriptingPlayground/" }
