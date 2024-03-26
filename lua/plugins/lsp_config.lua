@@ -25,13 +25,27 @@ return {
 						},
 					},
 				},
+				lspconfig.pyright.setup({
+					settings = {
+						pyright = {
+							-- Using Ruff's import organizer
+							disableOrganizeImports = true,
+						},
+						python = {
+							analysis = {
+								-- Ignore all files for analysis to exclusively use Ruff for linting
+								ignore = { "*" },
+							},
+						},
+					},
+				}),
+				lspconfig.ruff_lsp.setup({}),
 			})
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
 			vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
 			vim.keymap.set("n", "gD", vim.lsp.buf.declaration, {})
 			vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, {})
 			vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {})
-			lspconfig.pyright.setup({})
 		end,
 	},
 }
