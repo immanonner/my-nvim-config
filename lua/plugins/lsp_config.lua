@@ -16,8 +16,10 @@ return {
 		"neovim/nvim-lspconfig",
 
 		config = function()
+            local capabilities = require('cmp_nvim_lsp').default_capabilities()
 			local lspconfig = require("lspconfig")
 			lspconfig.lua_ls.setup({
+                capabilities = capabilities,
 				settings = {
 					Lua = {
 						diagnostics = {
@@ -26,6 +28,7 @@ return {
 					},
 				},
 				lspconfig.pyright.setup({
+                    capabilities = capabilities,
 					settings = {
 						pyright = {
 							-- Using Ruff's import organizer
@@ -40,6 +43,7 @@ return {
 					},
 				}),
 				lspconfig.ruff_lsp.setup({
+                    capabilities = capabilities,
 					init_options = {
 						settings = {
 							-- Any extra CLI arguments for `ruff` go here.
