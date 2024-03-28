@@ -13,3 +13,4 @@ require("lazy_engine")
 -- Load the plugins
 -- telescope and other plugin configs will be found here, with their key remaps.
 require("lazy").setup("plugins")
+

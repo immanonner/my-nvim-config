@@ -9,7 +9,7 @@ return {
 	{
 		"williamboman/mason-lspconfig.nvim",
 		config = function()
-			require("mason-lspconfig").setup({ ensure_installed = { "lua_ls", "pyright" } })
+			require("mason-lspconfig").setup({ ensure_installed = { "lua_ls", "pyright", "ruff_lsp" } })
 		end,
 	},
 	{
@@ -39,13 +39,21 @@ return {
 						},
 					},
 				}),
-				lspconfig.ruff_lsp.setup({}),
+				lspconfig.ruff_lsp.setup({
+					init_options = {
+						settings = {
+							-- Any extra CLI arguments for `ruff` go here.
+							args = {"--config=~/.config/nvim/lua/ruff/ruff.toml"},
+						},
+					},
+				}),
 			})
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
 			vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
 			vim.keymap.set("n", "gD", vim.lsp.buf.declaration, {})
 			vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, {})
 			vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {})
+			vim.keymap.set("n", "<leader>cf", vim.lsp.buf.format, {})
 		end,
 	},
 }
