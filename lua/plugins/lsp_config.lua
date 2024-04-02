@@ -1,6 +1,7 @@
 return {
 	{
 		"williamboman/mason.nvim",
+		event = "VeryLazy",
 		config = function()
 			require("mason").setup()
 		end,
@@ -8,18 +9,17 @@ return {
 
 	{
 		"williamboman/mason-lspconfig.nvim",
-		config = function()
-			require("mason-lspconfig").setup({ ensure_installed = { "lua_ls", "pyright", "ruff_lsp" } })
-		end,
+		event = "VeryLazy",
+		opts = { auto_install = true, auto_update = true },
 	},
 	{
 		"neovim/nvim-lspconfig",
-
+		event = "VeryLazy",
 		config = function()
-            local capabilities = require('cmp_nvim_lsp').default_capabilities()
+			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 			local lspconfig = require("lspconfig")
 			lspconfig.lua_ls.setup({
-                capabilities = capabilities,
+				capabilities = capabilities,
 				settings = {
 					Lua = {
 						diagnostics = {
@@ -28,7 +28,7 @@ return {
 					},
 				},
 				lspconfig.pyright.setup({
-                    capabilities = capabilities,
+					capabilities = capabilities,
 					settings = {
 						pyright = {
 							-- Using Ruff's import organizer
@@ -43,14 +43,17 @@ return {
 					},
 				}),
 				lspconfig.ruff_lsp.setup({
-                    capabilities = capabilities,
+					capabilities = capabilities,
 					init_options = {
 						settings = {
 							-- Any extra CLI arguments for `ruff` go here.
-							args = {"--config=~/.config/nvim/lua/ruff/ruff.toml"},
+							args = { "--config=~/.config/nvim/lua/ruff/ruff.toml" },
 						},
 					},
 				}),
+                lspconfig.tsserver.setup({
+                    capabilities = capabilities,
+                }),
 			})
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
 			vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})

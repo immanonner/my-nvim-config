@@ -1,14 +1,20 @@
 return {
 	{
 		"hrsh7th/cmp-nvim-lsp",
+		event = "VeryLazy",
 	},
-	{ "github/copilot.vim" },
+	{
+		"github/copilot.vim",
+		event = "VeryLazy",
+	},
 	{
 		"L3MON4D3/LuaSnip",
 		dependencies = { "saadparwaiz1/cmp_luasnip", "rafamadriz/friendly-snippets" },
+		event = "VeryLazy",
 	},
 	{
 		"hrsh7th/nvim-cmp",
+		event = "VeryLazy",
 		config = function()
 			-- Set up nvim-cmp.
 			local cmp = require("cmp")
@@ -17,7 +23,7 @@ return {
 				snippet = {
 					-- REQUIRED - you must specify a snippet engine
 					expand = function(args)
-						vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
+						-- vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
 						require("luasnip").lsp_expand(args.body) -- For `luasnip` users.
 						-- require('snippy').expand_snippet(args.body) -- For `snippy` users.
 						-- vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
