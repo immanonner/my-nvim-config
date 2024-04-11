@@ -9,3 +9,4 @@ vim.opt.relativenumber = true -- show line numbers
 -- vim.opt.cursorline -- highlight current line
 vim.opt.cursorline = true
 vim.opt.cursorlineopt = "number"
+vim.filetype.add({extension = {md = 'markdown'}})
