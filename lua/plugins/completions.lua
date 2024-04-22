@@ -12,8 +12,29 @@ return {
     },
     {
         "L3MON4D3/LuaSnip",
-        dependencies = { "saadparwaiz1/cmp_luasnip", "rafamadriz/friendly-snippets" },
+        dependencies = {
+            "saadparwaiz1/cmp_luasnip",
+            "rafamadriz/friendly-snippets",
+            "iurimateus/luasnip-latex-snippets.nvim",
+        },
+        config = function()
+            local ls = require("luasnip")
+            ls.config.setup({
+                enable_autosnippets = true,
+            })
+        end,
         event = "VeryLazy",
+    },
+    {
+        "iurimateus/luasnip-latex-snippets.nvim",
+        requires = { "L3MON4D3/LuaSnip" },
+        event = "VeryLazy",
+        config = function()
+            require("luasnip-latex-snippets").setup({
+                use_treesitter = true,
+                allow_on_markdown = true,
+            })
+        end,
     },
     {
         "hrsh7th/nvim-cmp",
@@ -47,7 +68,7 @@ return {
                 sources = cmp.config.sources({
                     { name = "nvim_lsp" },
                     --{ name = "vsnip" }, -- For vsnip users.
-                    { name = "luasnip" }, -- For luasnip users.
+                    { name = "luasnip", options = { show_autosnippets = true } }, -- For luasnip users.
                     -- { name = 'ultisnips' }, -- For ultisnips users.
                     -- { name = 'snippy' }, -- For snippy users.
                 }, {

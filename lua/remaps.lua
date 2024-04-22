@@ -17,7 +17,20 @@ vim.api.nvim_set_keymap("n", "<leader>/", ":nohlsearch<CR>", { noremap = true, s
 vim.api.nvim_set_keymap("n", "<leader>b", ":bprev<CR>", { noremap = true, silent = true })
 --remap bnext to <leader>f
 vim.api.nvim_set_keymap("n", "<leader>f", ":bnext<CR>", { noremap = true, silent = true })
+-- TIP: Disable arrow keys in normal mode
+vim.keymap.set("n", "<left>", '<cmd>echo "Use h to move!!"<CR>')
+vim.keymap.set("n", "<right>", '<cmd>echo "Use l to move!!"<CR>')
+vim.keymap.set("n", "<up>", '<cmd>echo "Use k to move!!"<CR>')
+vim.keymap.set("n", "<down>", '<cmd>echo "Use j to move!!"<CR>')
 
+-- Keybinds to make split navigation easier.
+--  Use CTRL+<hjkl> to switch between windows
+--
+--  See `:help wincmd` for a list of all window commands
+vim.keymap.set("n", "<C-h>", "<C-w><C-h>", { desc = "Move focus to the left window" })
+vim.keymap.set("n", "<C-l>", "<C-w><C-l>", { desc = "Move focus to the right window" })
+vim.keymap.set("n", "<C-j>", "<C-w><C-j>", { desc = "Move focus to the lower window" })
+vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper window" })
 -------Plugin Remaps-------
 
 -- Telekasten
@@ -36,5 +49,4 @@ vim.keymap.set("n", "<leader>zI", "<cmd>Telekasten insert_img_link<CR>")
 
 -- Call insert link automatically when we start typing a link
 vim.keymap.set("i", "[[", "<cmd>Telekasten insert_link<CR>")
-
 
