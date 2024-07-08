@@ -4,10 +4,10 @@ return {
         cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
         build = "cd app && yarn install",
         init = function()
-            vim.g.mkdp_filetypes = { "markdown" }
+            vim.g.mkdp_filetypes = { "markdown", "telekasten" }
             vim.g.mkdp_browser = "chrome"
         end,
-        ft = { "markdown" },
+        ft = { "markdown", "telekasten" },
     },
     --{
     --    "ellisonleao/glow.nvim",
