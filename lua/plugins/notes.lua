@@ -1,6 +1,7 @@
 return {
     {
         "renerocksai/telekasten.nvim",
+        event = "VeryLazy",
         dependencies = { "nvim-telescope/telescope.nvim" },
         config = function()
             require("telekasten").setup({

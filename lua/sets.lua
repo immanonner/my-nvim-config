@@ -9,6 +9,7 @@ vim.opt.cursorline = true -- highlight current line
 vim.opt.cursorlineopt = "number" -- highlight current line number
 vim.filetype.add({extension = {md = 'markdown'}}) -- set markdown filetype
 vim.g.have_nerd_font = true -- set nerd font to true
+vim.g.netrw_keepdir = 0 -- tracks the current working directory nvim vs netrw , important for telescope intutive file search
 vim.opt.ignorecase = true -- ignore case when searching
 vim.opt.smartcase = true -- ignore case if search pattern is all lowercase
 vim.opt.splitright = true -- split right
