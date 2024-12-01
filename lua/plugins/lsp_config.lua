@@ -42,7 +42,7 @@ return {
 						},
 					},
 				}),
-				lspconfig.ruff_lsp.setup({
+				lspconfig.ruff.setup({
 					capabilities = capabilities,
 					init_options = {
 						settings = {
@@ -51,7 +51,7 @@ return {
 						},
 					},
 				}),
-                lspconfig.tsserver.setup({
+                lspconfig.ts_ls.setup({
                     capabilities = capabilities,
                 }),
                 lspconfig.bashls.setup({

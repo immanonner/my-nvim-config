@@ -7,6 +7,7 @@ return {
         init = function()
             vim.g.mkdp_filetypes = { "markdown", "telekasten" }
             vim.g.mkdp_browser = "chrome"
+            vim.g.mkdp_page_title = "${name}"
         end,
         ft = { "markdown", "telekasten" },
     },
