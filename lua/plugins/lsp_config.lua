@@ -1,11 +1,15 @@
+-- LSP Support
 return {
-	{
-		"williamboman/mason.nvim",
-		event = "VeryLazy",
-		config = function()
-			require("mason").setup()
-		end,
-	},
+    -- LSP Configuration
+    -- https://github.com/neovim/nvim-lspconfig
+    'neovim/nvim-lspconfig',
+    event = 'VeryLazy',
+    dependencies = {
+        -- LSP Management
+        -- https://github.com/williamboman/mason.nvim
+        { 'williamboman/mason.nvim' },
+        -- https://github.com/williamboman/mason-lspconfig.nvim
+        { 'williamboman/mason-lspconfig.nvim' },
 
 	{
 		"williamboman/mason-lspconfig.nvim",

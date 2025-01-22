@@ -17,6 +17,8 @@ vim.api.nvim_set_keymap("n", "<leader>e.", ":Explore .<CR>", { noremap = true, s
 vim.api.nvim_set_keymap("n", "<leader>eh", ":Explore ~<CR>", { noremap = true, silent = true })
 --remap explore current file directory to <leader>
 vim.api.nvim_set_keymap("n", "<leader>ed", ":Explore %:h<CR>", { noremap = true, silent = true })
+--remap explore nvim config to <leader>ec
+vim.api.nvim_set_keymap("n", "<leader>ec", ":Explore ~/.config/nvim<CR>", { noremap = true, silent = true })
 --remap nohlsearch to <leader>/
 vim.api.nvim_set_keymap("n", "<leader>/", ":nohlsearch<CR>", { noremap = true, silent = true })
 --remap bprev to <leader>b
