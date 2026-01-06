@@ -14,11 +14,11 @@ vim.api.nvim_set_keymap("n", "<leader>q", ":wq<CR>", { noremap = true, silent = 
 --remap explore here to <leader>e
 vim.api.nvim_set_keymap("n", "<leader>e.", ":Explore .<CR>", { noremap = true, silent = true })
 --remap explore home to <leader>eh
-vim.api.nvim_set_keymap("n", "<leader>eh", ":Explore ~<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>eh", ":Explore $HOME<CR>", { noremap = true, silent = true })
 --remap explore current file directory to <leader>
 vim.api.nvim_set_keymap("n", "<leader>ed", ":Explore %:h<CR>", { noremap = true, silent = true })
 --remap explore nvim config to <leader>ec
-vim.api.nvim_set_keymap("n", "<leader>ec", ":Explore ~/.config/nvim<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>ec", ":Explore $HOME/AppData/local/nvim<CR>", { noremap = true, silent = true })
 --remap nohlsearch to <leader>/
 vim.api.nvim_set_keymap("n", "<leader>/", ":nohlsearch<CR>", { noremap = true, silent = true })
 --remap bprev to <leader>b
@@ -57,4 +57,3 @@ vim.keymap.set("n", "<leader>zI", "<cmd>Telekasten insert_img_link<CR>")
 
 -- Call insert link automatically when we start typing a link
 vim.keymap.set("i", "[[", "<cmd>Telekasten insert_link<CR>")
-

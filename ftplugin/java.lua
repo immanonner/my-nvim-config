@@ -21,11 +21,11 @@ end
 
 -- Needed for debugging
 local bundles = {
-    vim.fn.glob(home .. "/.local/share/nvim/mason/share/java-debug-adapter/com.microsoft.java.debug.plugin.jar"),
+    vim.fn.glob(home .. "/AppData/Local/nvim-data/mason/share/java-debug-adapter/com.microsoft.java.debug.plugin.jar"),
 }
 
 -- Needed for running/debugging unit tests
-vim.list_extend(bundles, vim.split(vim.fn.glob(home .. "/.local/share/nvim/mason/share/java-test/*.jar", true), "\n"))
+vim.list_extend(bundles, vim.split(vim.fn.glob(home .. "/AppData/Local/nvim-data/mason/share/java-test/*.jar", true), "\n"))
 
 -- See `:help vim.lsp.start_client` for an overview of the supported `config` options.
 local config = {
@@ -38,7 +38,7 @@ local config = {
         "-Declipse.product=org.eclipse.jdt.ls.core.product",
         "-Dlog.protocol=true",
         "-Dlog.level=ALL",
-        "-javaagent:" .. home .. "/.local/share/nvim/mason/share/jdtls/lombok.jar",
+        "-javaagent:" .. home .. "/AppData/Local/nvim-data/mason/share/jdtls/lombok.jar",
         "-Xmx4g",
         "--add-modules=ALL-SYSTEM",
         "--add-opens",
@@ -48,9 +48,9 @@ local config = {
 
         -- Eclipse jdtls location
         "-jar",
-        home .. "/.local/share/nvim/mason/share/jdtls/plugins/org.eclipse.equinox.launcher.jar",
+        home .. "/AppData/Local/nvim-data/mason/share/jdtls/plugins/org.eclipse.equinox.launcher.jar",
         "-configuration",
-        home .. "/.local/share/nvim/mason/packages/jdtls/config_" .. system_os,
+        home .. "/AppData/Local/nvim-data/mason/packages/jdtls/config_" .. system_os,
         "-data",
         workspace_dir,
     },
